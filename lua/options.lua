@@ -7,7 +7,7 @@
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -24,6 +24,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.breakindent = true
 
 -- Save undo history
+-- vim.opt.undodir = os.getenv 'Home' .. '/.vim/undodir'
 vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -60,3 +61,16 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- vim: ts=2 sts=2 sw=2 et
+vim.opt.guicursor = ''
+
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.shifwidth = 4
+vim.expandtab = 4
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 16
+
+vim.opt.smartindent = true
+vim.opt.colorcolumn = '80'
