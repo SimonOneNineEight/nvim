@@ -1,6 +1,7 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+local opt = { noremap = true, silent = true }
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -10,6 +11,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- Move between directories
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Return to [P]re[V]ious directory' })
 
 -- Move the highlighted text and automatically indent
@@ -51,6 +54,15 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Toggle explore tab in the left
+vim.keymap.set('n', '<leader>e', ':Lex 30<CR>', { desc = 'Toggle [E]xplore tab' })
+
+-- Resizeing tabs
+vim.keymap.set('n', '<C-Upper>', ':resize -2<CR>', { desc = 'decrease tab size' })
+vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', { desc = 'increase tab size' })
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', { desc = 'decrease tab size' })
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', { desc = 'decrease tab size' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
